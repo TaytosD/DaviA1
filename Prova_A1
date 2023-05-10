@@ -1,0 +1,65 @@
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Calculadora de Economia");
+    System.out.println("");
+    Scanner scanner = new Scanner(System.in);
+    
+    //solicitação da placa
+    System.out.println("Por favor, digite a placa do veículo ");
+    String placa = scanner.nextLine();
+    System.out.println("");
+    
+    //solicitação do combustivel
+    System.out.println("Preço por litro do combustível");
+    Double precoLitro = scanner.nextDouble();
+    System.out.println("");
+    
+    //solicitação de km rodados
+    System.out.println("Qual a quantidade de quilômetros rodados a 60 KM/H");
+    Double km60 = scanner.nextDouble();
+    Double consumo60 = 30.7;
+    System.out.println("");
+    
+    System.out.println("Qual a quantidade de quilômetros rodados a 80 KM/H");
+    Double km80 = scanner.nextDouble();
+    Double consumo80 = 26.8;
+    System.out.println("");
+    
+    System.out.println("Qual a quantidade de quilômetros rodados a 100 KM/H");
+    Double km100 = scanner.nextDouble();
+    Double consumo100 = 22.4;
+    System.out.println("");
+    
+    System.out.println("Qual a quantidade de quilômetros rodados a 120 KM/H");
+    Double km120 = scanner.nextDouble();
+    Double consumo120 = 18.1;
+    System.out.println("");
+
+    System.out.println("Qual a quantidade de quilômetros rodados a 140 KM/H");
+    Double km140 = scanner.nextDouble();
+    Double consumo140 = 14.5;
+    System.out.println("");
+    //fechamento do scannner
+    scanner.close();
+    //calculo de combustivel consumido
+    Double consumoTotal = km60/consumo60 + km80/consumo80 + km100/consumo100 + km120/consumo120 + km140/consumo140;
+    //calculo da velocidade media ponderada
+    double velocidadeMedia = (60*km60 + 80*km80 + 100*km100 + 120*km120 + 140*km140)/(km60 + km80 + km100 + km120 + km140); 
+    //calculo de custo total da viagem
+    double custoTotal = consumoTotal*precoLitro;
+    
+    //saída
+    System.out.println("Placa do veículo: " + placa);
+    System.out.println("");
+    
+    System.out.println("Custo total da viagem: R$" + custoTotal);
+    System.out.println("");
+   
+    System.out.println("Velocidade média ponderada: " + velocidadeMedia + " Km/h");
+    System.out.println("");
+    
+    System.out.println("Quantidade total de combustível consumido: " + consumoTotal + " litros");
+    System.out.println("");
+  }
+}
